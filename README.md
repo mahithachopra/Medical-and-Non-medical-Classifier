@@ -1,21 +1,21 @@
-### 🩺 Medical vs Non-Medical Image Classifier
+# 🩺 Medical vs Non-Medical Image Classifier
 A Streamlit web application that can automatically classify images as medical or non-medical.
 Supports extracting images from webpages or PDF files and uses OpenAI CLIP for zero-shot classification.
 
 ##  Features
-# Two input modes:
+### Two input modes:
 
 URL – Scrapes and downloads images from a webpage.
 
 PDF Upload – Extracts embedded images and page renders from PDFs.
 
-# Zero-shot classification:
+### Zero-shot classification:
 
 Uses CLIP ViT-B/32 with tailored prompts for both classes.
 
 No custom training data required.
 
-# Interactive UI:
+### Interactive UI:
 
 Displays image thumbnails.
 
@@ -23,7 +23,7 @@ Shows classification labels with confidence bars.
 
 ##  Approach
 
-# We use OpenAI’s CLIP model to compare each image to two prompt sets:
+### We use OpenAI’s CLIP model to compare each image to two prompt sets:
 
 Medical prompts (e.g., "an MRI scan", "a medical image").
 
@@ -31,7 +31,7 @@ Non-medical prompts (e.g., "a landscape photograph", "a photo of animals").
 
 The average embedding for each category is computed, and each image is assigned the label with the highest cosine similarity.
 
-##  Example Accuracy (Small Test)
+###  Example Accuracy (Small Test)
 On a small balanced test set of 200 images:
 
 Accuracy: ~94%
@@ -56,11 +56,11 @@ Optimizations: Possible quantization and caching of embeddings.
 
 ## Installation
 
-# Clone this repository:
+### Clone this repository:
 git clone https://github.com/<mahithachopra>/<Medical-and-Non-medical-Classifier>.git
 cd <Medical-and-Non-medical-Classifier>
 
-# Install dependencies:
+### Install dependencies:
 pip install -r requirements.txt
 requirements.txt includes:
 - torch>=1.12
