@@ -1,0 +1,10 @@
+torch>=1.12
+ftfy
+regex
+tqdm
+requests
+beautifulsoup4
+Pillow
+git+https://github.com/openai/CLIP.git
+PyMuPDF
+streamlit
