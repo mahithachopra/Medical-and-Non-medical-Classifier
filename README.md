@@ -5,40 +5,40 @@ Supports extracting images from webpages or PDF files and uses OpenAI CLIP for z
 ##  Features
 ### Two input modes:
 
-URL – Scrapes and downloads images from a webpage.
+- URL – Scrapes and downloads images from a webpage.
 
-PDF Upload – Extracts embedded images and page renders from PDFs.
+- PDF Upload – Extracts embedded images and page renders from PDFs.
 
 ### Zero-shot classification:
 
-Uses CLIP ViT-B/32 with tailored prompts for both classes.
+- Uses CLIP ViT-B/32 with tailored prompts for both classes.
 
-No custom training data required.
+- No custom training data required.
 
 ### Interactive UI:
 
-Displays image thumbnails.
+- Displays image thumbnails.
 
-Shows classification labels with confidence bars.
+- Shows classification labels with confidence bars.
 
 ##  Approach
 
 ### We use OpenAI’s CLIP model to compare each image to two prompt sets:
 
-Medical prompts (e.g., "an MRI scan", "a medical image").
+- Medical prompts (e.g., "an MRI scan", "a medical image").
 
-Non-medical prompts (e.g., "a landscape photograph", "a photo of animals").
+- Non-medical prompts (e.g., "a landscape photograph", "a photo of animals").
 
-The average embedding for each category is computed, and each image is assigned the label with the highest cosine similarity.
+- The average embedding for each category is computed, and each image is assigned the label with the highest cosine similarity.
 
 ###  Example Accuracy (Small Test)
 On a small balanced test set of 200 images:
 
-Accuracy: ~94%
+- Accuracy: ~94%
 
-Precision (medical): 0.92
+- Precision (medical): 0.92
 
-Recall (medical): 0.95
+- Recall (medical): 0.95
 Misclassifications mostly involved:
 
 Medical images containing non-medical background (e.g., hospital exterior).
@@ -46,13 +46,13 @@ Medical images containing non-medical background (e.g., hospital exterior).
 Technical diagrams mistaken for medical scans.
 
 ##  Performance
-Inference Speed: ~50ms/image on CPU.
+- Inference Speed: ~50ms/image on CPU.
 
-Memory: ~45MB for model weights.
+- Memory: ~45MB for model weights.
 
-Scalability: Sequential processing; can be parallelized for large datasets.
+- Scalability: Sequential processing; can be parallelized for large datasets.
 
-Optimizations: Possible quantization and caching of embeddings.
+- Optimizations: Possible quantization and caching of embeddings.
 
 ## Installation
 
@@ -83,20 +83,20 @@ URL – Enter the webpage URL.
 PDF Upload – Upload a PDF file.
 
 The app will:
-Extract images.
-Classify each as medical or non-medical.
-Display thumbnails with labels and confidence bars.
+- Extract images.
+- Classify each as medical or non-medical.
+- Display thumbnails with labels and confidence bars.
 
 ## Notes
-Requires internet access for CLIP download (first run).
-Works best with clear, well-lit images.
-Zero-shot — no custom dataset required, but fine-tuning on a curated dataset can improve performance.
+- Requires internet access for CLIP download (first run).
+- Works best with clear, well-lit images.
+- Zero-shot — no custom dataset required, but fine-tuning on a curated dataset can improve performance.
 
 ## Results
 Each image is shown with:
-Label: medical or non-medical
-Confidence Bar: Displays the similarity score for the predicted class.
-Scores: Both medical and non-medical similarity scores.
+- Label: medical or non-medical
+- Confidence Bar: Displays the similarity score for the predicted class.
+- Scores: Both medical and non-medical similarity scores.
 
 
 
@@ -104,4 +104,3 @@ Scores: Both medical and non-medical similarity scores.
 
 
 
-You said:
